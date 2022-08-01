@@ -31,20 +31,3 @@ function guardarConjunto (){
     conjunto.push(resultadoIp)
     alert("Conjuntos Guardados \n" + conjunto.join("\n"))
 }
-
-
-
-
-/*
-const guardado = []
-function guardarConjunto (){
-
-    class Conjunto {
-        constructor (nombre, resultado){
-            this.nombre = nombre
-            this.resultado = resultado
-        }
-    }
-    guardado.push(Conjunto, {nombre:prompt("Ingrese nombre de Conjunto"), resultado: resultadoIpGuardado})
-    console.log(guardado.join("/n"))
-}*/
