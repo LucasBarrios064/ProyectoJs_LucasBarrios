@@ -28,6 +28,6 @@ function pedirDatos (){
 
 const conjunto = []
 function guardarConjunto (){
-    conjunto.push(resultadoIp)
+    conjunto.push( prompt( "Ingrese Nombre de conjunto") + " || " + resultadoIp  )
     alert("Conjuntos Guardados \n" + conjunto.join("\n"))
 }
