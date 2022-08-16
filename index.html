@@ -7,29 +7,93 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Calculador de IP - Albion Online</title>
 </head>
-<body>
-    <header>
-        <div class="cajaTitulo">
-            <h1 class="titulo">
-                Calculadora de IP - Albion Online
-            </h1>
-        </div>
-    </header>
-    <main>
-        <div class="cajaTextoExplicacion">
-            <h2>¿Que es el IP?</h2>
-            <p class="textoExplicacion">El IP o Item Power es el poder promedio que se obtiene en el juego al sumar y dividir el Poder de todos los objetos que lleve el jugador equipado.</p>
-        </div>
-        <div class="cajaBoton">
-            <button onclick="pedirDatos()" class="botonCalculo">Calcular tu IP</button>
-        </div>
-        <div class="cajaBoton">
-            <button onclick="guardarConjunto()" class="botonCalculo">Guardar ultimo Conjunto</button>
-        </div>
-        <div class="cajaBoton">
-            <button onclick="buscarConjunto()" class="botonCalculo">Buscar Conjunto</button>
-        </div>
-    </main>
-    <script src="./js/proyecto.js"></script>
-</body>
+    <body>
+        <header>
+            <div class="cajaTitulo">
+                <h1 class="titulo">
+                    Calculadora de IP - Albion Online
+                </h1>
+            </div>
+        </header>
+        <main>
+            <div class="cajaTextoExplicacion">
+                <h2>¿Que es el IP?</h2>
+                <p class="textoExplicacion">El IP o Item Power es el poder promedio que se obtiene en el juego al sumar y dividir el Poder de todos los objetos que lleve el jugador equipado.</p>
+
+                <section>
+                    <!--PRIMER FORMULARIO-->
+                    <form class="formulario1" id="formularioCalculo">
+                        <div>
+                            <div>
+                                <label for="PreguntaArma">Su arma es de doble mano Si/No</label>
+                                <input id="PreguntaArma" name="preguntaArma" placeholder="Ingrese Si o No">
+                            </div>
+                            <div>
+                                <label for="CascoInput">Casco:</label>
+                                <input id="CascoInput" name="casco" placeholder="Ingrese el Ip de su Casco">
+                            </div>
+
+                            <div>
+                                <label for="PecheraInput">Pechera</label>
+                                <input  id="PecheraInput" name="pechera" placeholder="Ingrese el Ip de su Pechera">
+                            </div>
+
+                            <div>
+                                <label for="BotasInput">Botas</label>
+                                <input  id="BotasInput" name="botas" placeholder="Ingrese el Ip de sus Botas">
+                            </div>
+
+                            <div>
+                                <label for="CapaInput">Capa</label>
+                                <input id="CapaInput" name="capa" placeholder="Ingrese el Ip de su Capa">
+                            </div>
+
+                            <div>
+                                <label for="ArmaInput">Arma</label>
+                                <input id="ArmaInput" name="arma" placeholder="Ingrese el Ip de su Arma">
+                            </div>
+
+                            <div>
+                                <label for="ArmaSecundariaInput">Arma Secundaria</label>
+                                <input id="ArmaSecundariaInput" name="armaSecundaria" placeholder="Ingrese el Ip de su ArmaSecundaria">
+                            </div>
+                        </div>
+                        
+                        <div class="cajaBoton">
+                            <button id="BotonCalculo" class="botonCalculo"> Calcula el IP</button>
+                        </div>
+                        <div id="DatosVacio"></div>
+                    </form>
+
+                    <!--SEGUNDO FORMULARIO-->
+                    <form class="formulario1" id="formularioConjunto">
+                        <div>
+                            <label for="ConjuntoInput">Ingrese un nombre para su conjunto: </label>
+                            <input id="ConjuntoInput" name="nombreConjunto" placeholder="Ingrese un nombre">
+                            <button id="BotonConjunto">Guardar Conjunto</button>
+                        </div>
+                    </form>
+
+                    <!--TERCER FORMULARIO-->
+                    <form class="formulario1" id="formularioBuscar">
+                        <div>
+                            <label for="ConjuntoBuscar">Nombre de conjunto a buscar: </label>
+                            <input id="ConjuntoBuscar" name="buscarConjunto" placeholder="Ingrese Nombre de conjunto">
+                            <button id="BotonBuscar"> BUSCAR</button>
+                        </div>
+                        <div >
+                            <h3>TU CONJUNTO ES:</h3>
+                            <div id="BuscarVacio"></div>
+                        </div>
+                    </form>
+                    <div class="formulario1">
+                        <h3>TUS CONJUNTOS:</h3>
+                        <div id="ConjuntoVacio">
+                            <ul id="ulPadre"></ul>
+                        </div>
+                    </div>
+                </section>
+        </main>
+        <script src="./js/proyecto.js"></script>
+    </body>
 </html>

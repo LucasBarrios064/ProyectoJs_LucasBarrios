@@ -1,5 +1,9 @@
-    let resultado = ""
-    let resultadoIp = "" 
+
+//ESTA PARTE ES DEL PRIMER FORMULARIO
+const formularioCalculo = document.getElementById('formularioCalculo');
+const datosVacio = document.getElementById("DatosVacio")
+let resultado = ""
+let resultadoIp = ""
 
 class Datos{
     constructor(casco, pechera, botas, capa, arma, armaSecundaria){
@@ -12,34 +16,52 @@ class Datos{
     }
 
     calcularIpCompleta() {
-        resultado = (this.casco + this.pechera + this.botas + this.capa + this.arma + parseInt(this.armaSecundaria) )/6;
+        resultado = (this.casco + this.pechera + this.botas + this.capa + this.arma + this.armaSecundaria)/6;
     }
     calcularIpArmaDobleMano() {
         resultado = (this.casco + this.pechera + this.botas + this.capa + this.arma )/5;
     }
 }
 
-function pedirDatos(){
-    let preguntaArma = prompt("Su arma es de doble mano ingrese Si/No")
-    switch(preguntaArma){
-        case "No":
-            datoEquipo = new Datos (+prompt("Ingrese el Ip en su casco"), +prompt("Ingrese el Ip en su pechera"), +prompt("Ingrese el Ip en sus botas"),+prompt("Ingrese el Ip en su capa"), +prompt("Ingrese el Ip en su arma principal"),+prompt("Ingrese el Ip en su arma secundaria"));
 
-            datoEquipo.calcularIpCompleta()
-            break;
+const hacerCalculo = (event) => {
 
-        case "Si":
-            datoEquipo = new Datos (+prompt("Ingrese el Ip en su casco"), +prompt("Ingrese el Ip en su pechera"), +prompt("Ingrese el Ip en sus botas"),+prompt("Ingrese el Ip en su capa"), +prompt("Ingrese el Ip en su arma principal"),"No");
+    event.preventDefault();
 
-            datoEquipo.calcularIpArmaDobleMano()
-            break;
+
+    const {preguntaArma, casco, pechera, botas, capa, arma, armaSecundaria} = event.target
+
+    if(preguntaArma.value == "No"){
+        datoEquipo = new Datos (parseInt(casco.value), parseInt(pechera.value), parseInt(botas.value), parseInt(capa.value) ,parseInt(arma.value) , parseInt(armaSecundaria.value))
+
+        datoEquipo.calcularIpCompleta()
+
+    }else if(preguntaArma.value == "Si"){
+
+        datoEquipo = new Datos (parseInt(casco.value), parseInt(pechera.value), parseInt(botas.value), parseInt(capa.value) ,parseInt(arma.value) , "No")
+
+        datoEquipo.calcularIpArmaDobleMano()
+    }else{
+
+        console.log("No ingreso una opcion valida, Ingrese Si o No")
+        datoEquipo = 0
     }
-    datosUsuario = datoEquipo
+
+    
     resultadoIp = Math.round(resultado);
 
-    console.log (datosUsuario)
-    alert( "Su ip promedio es de " + resultadoIp);
+    console.log("Tu ip promedio es: " + resultadoIp) 
+    console.log(datoEquipo)
+    datosVacio.innerHTML = `<h3>TU CONJUNTO ES:</h3> <p> Ip promedio:${resultadoIp}</p> <ul><li>Casco: ${datoEquipo.casco}</li><li>Pechera: ${datoEquipo.pechera}</li> <li>Botas: ${datoEquipo.botas}</li> <li>Capa: ${datoEquipo.capa}</li> <li>Arma: ${datoEquipo.arma}</li> <li>Arma Secundaria: ${datoEquipo.armaSecundaria}</li>  </ul>`
 }
+
+
+formularioCalculo.addEventListener("submit",hacerCalculo);
+
+
+//ESTA PARTE ES DEL SEGUNDO FORMULARIO
+const formularioConjunto =document.getElementById('formularioConjunto');
+const ulPadre = document.getElementById("ulPadre")
 
 
 const conjunto = []
@@ -49,23 +71,44 @@ class Equipamiento{
         this.poderFinal = poderFinal;
         this.poderEquipo = poderEquipo
     }
+}
 
-}    
-function guardarConjunto(){
-        conjunto.push( new Equipamiento (prompt("Ingrese nombre de Conjunto") , resultadoIp, datosUsuario))
-        console.log(conjunto)
-    }
+const guardarConjunto = (event) => {
+    event.preventDefault();
 
-function buscarConjunto (){
+    const {nombreConjunto} = event.target
+    conjunto.push( new Equipamiento (nombreConjunto.value, resultadoIp, datoEquipo))
+    console.log(conjunto)
 
-    let conjuntoBuscado = prompt("Ingrese nombre de conjunto")
+    let li =document.createElement("li")
 
-    const conjuntoElegido = conjunto.find((elemento) => {return elemento.nombreConjunto == conjuntoBuscado})
+    li.innerHTML = `<h4>${nombreConjunto.value}</h4> <p>Tu ip final es: ${resultadoIp} <ul><li>Casco: ${datoEquipo.casco}</li><li>Pechera: ${datoEquipo.pechera}</li> <li>Botas: ${datoEquipo.botas}</li> <li>Capa: ${datoEquipo.capa}</li> <li>Arma: ${datoEquipo.arma}</li> <li>Arma Secundaria: ${datoEquipo.armaSecundaria}</li></ul></p> `
+
+    ulPadre.appendChild(li);
+}
+
+formularioConjunto.addEventListener("submit",guardarConjunto)
+
+
+
+
+//ESTA PARTE ES DEL TERCER FORMULARIO
+const formularioBuscar =document.getElementById('formularioBuscar');
+const buscarVacio =document.getElementById("BuscarVacio")
+const buscarConjunto1 = (event)=>{
+
+    event.preventDefault();
+    const {buscarConjunto} = event.target
+    const conjuntoElegido = conjunto.find((elemento) => {return elemento.nombreConjunto == buscarConjunto.value})
 
     if(conjuntoElegido){
         console.log ("Tu conjunto es: ")
         console.log (conjuntoElegido)
+        buscarVacio.innerHTML = `<h4>${conjuntoElegido.nombreConjunto}</h4> <ul><li>PODER FINAL:${conjuntoElegido.poderFinal}</li> <li> Casco: ${conjuntoElegido.poderEquipo.casco}</li></li><li>Pechera: ${conjuntoElegido.poderEquipo.pechera}</li> <li>Botas: ${conjuntoElegido.poderEquipo.botas}</li> <li>Capa: ${conjuntoElegido.poderEquipo.capa}</li> <li>Arma: ${conjuntoElegido.poderEquipo.arma}</li> <li>Arma Secundaria: ${conjuntoElegido.poderEquipo.armaSecundaria}</li></ul>`
     } else {
+        buscarVacio.innerHTML = "No se encontro el Conjunto Buscado."
         console.log ("No se encontro el Conjunto buscado.")
     }
 }
+
+formularioBuscar.addEventListener("submit", buscarConjunto1)
