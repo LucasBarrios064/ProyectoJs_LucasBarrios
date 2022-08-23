@@ -43,15 +43,12 @@ const hacerCalculo = (event) => {
         datoEquipo.calcularIpArmaDobleMano()
     }else{
 
-        console.log("No ingreso una opcion valida, Ingrese Si o No")
         datoEquipo = 0
     }
 
     
     resultadoIp = Math.round(resultado);
 
-    console.log("Tu ip promedio es: " + resultadoIp) 
-    console.log(datoEquipo)
     datosVacio.innerHTML = `<h3>TU CONJUNTO ES:</h3> <p> Ip promedio:${resultadoIp}</p> <ul><li>Casco: ${datoEquipo.casco}</li><li>Pechera: ${datoEquipo.pechera}</li> <li>Botas: ${datoEquipo.botas}</li> <li>Capa: ${datoEquipo.capa}</li> <li>Arma: ${datoEquipo.arma}</li> <li>Arma Secundaria: ${datoEquipo.armaSecundaria}</li>  </ul>`
 }
 
@@ -82,9 +79,12 @@ const guardarConjunto = (event) => {
 
     let li =document.createElement("li")
 
-    li.innerHTML = `<h4>${nombreConjunto.value}</h4> <p>Tu ip final es: ${resultadoIp} <ul><li>Casco: ${datoEquipo.casco}</li><li>Pechera: ${datoEquipo.pechera}</li> <li>Botas: ${datoEquipo.botas}</li> <li>Capa: ${datoEquipo.capa}</li> <li>Arma: ${datoEquipo.arma}</li> <li>Arma Secundaria: ${datoEquipo.armaSecundaria}</li></ul></p> `
+    li.innerHTML = `<h4>-----${nombreConjunto.value}-----</h4> <p>Tu ip final es: ${resultadoIp} <ul><li>Casco: ${datoEquipo.casco}</li><li>Pechera: ${datoEquipo.pechera}</li> <li>Botas: ${datoEquipo.botas}</li> <li>Capa: ${datoEquipo.capa}</li> <li>Arma: ${datoEquipo.arma}</li> <li>Arma Secundaria: ${datoEquipo.armaSecundaria}</li></ul></p> `
 
     ulPadre.appendChild(li);
+
+    let enJSON = JSON.stringify(conjunto)
+    localStorage.setItem(nombreConjunto.value , enJSON)
 }
 
 formularioConjunto.addEventListener("submit",guardarConjunto)
@@ -96,18 +96,14 @@ formularioConjunto.addEventListener("submit",guardarConjunto)
 const formularioBuscar =document.getElementById('formularioBuscar');
 const buscarVacio =document.getElementById("BuscarVacio")
 const buscarConjunto1 = (event)=>{
-
     event.preventDefault();
     const {buscarConjunto} = event.target
     const conjuntoElegido = conjunto.find((elemento) => {return elemento.nombreConjunto == buscarConjunto.value})
 
     if(conjuntoElegido){
-        console.log ("Tu conjunto es: ")
-        console.log (conjuntoElegido)
         buscarVacio.innerHTML = `<h4>${conjuntoElegido.nombreConjunto}</h4> <ul><li>PODER FINAL:${conjuntoElegido.poderFinal}</li> <li> Casco: ${conjuntoElegido.poderEquipo.casco}</li></li><li>Pechera: ${conjuntoElegido.poderEquipo.pechera}</li> <li>Botas: ${conjuntoElegido.poderEquipo.botas}</li> <li>Capa: ${conjuntoElegido.poderEquipo.capa}</li> <li>Arma: ${conjuntoElegido.poderEquipo.arma}</li> <li>Arma Secundaria: ${conjuntoElegido.poderEquipo.armaSecundaria}</li></ul>`
     } else {
         buscarVacio.innerHTML = "No se encontro el Conjunto Buscado."
-        console.log ("No se encontro el Conjunto buscado.")
     }
 }
 
