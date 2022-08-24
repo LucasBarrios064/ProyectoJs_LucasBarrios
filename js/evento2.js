@@ -3,7 +3,6 @@ const guardarConjunto = (event) => {
 
     const {nombreConjunto} = event.target
     conjunto.push( new Equipamiento (nombreConjunto.value, resultadoIp, datoEquipo))
-    console.log(conjunto)
 
     let li =document.createElement("li")
 
@@ -12,7 +11,12 @@ const guardarConjunto = (event) => {
     ulPadre.appendChild(li);
 
     let enJSON = JSON.stringify(conjunto)
-    localStorage.setItem(nombreConjunto.value , enJSON)
+    localStorage.setItem("ConjuntoLS", enJSON)
 }
 
 formularioConjunto.addEventListener("submit",guardarConjunto)
+
+const mostrar = JSON.parse(localStorage.getItem("ConjuntoLS"))
+
+console.log(mostrar)
+
