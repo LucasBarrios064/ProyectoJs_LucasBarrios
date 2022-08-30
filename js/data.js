@@ -7,6 +7,7 @@ const buscarVacio =document.getElementById("BuscarVacio")
 
 let resultado = ""
 let resultadoIp = ""
+let nombreDelConjunto = ""
 
 const conjunto = []
 
@@ -25,6 +26,7 @@ class Datos{
     }
     calcularIpArmaDobleMano() {
         resultado = (this.casco + this.pechera + this.botas + this.capa + this.arma )/5;
+        this.armaSecundaria = "No"
     }
 }
 
