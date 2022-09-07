@@ -1,0 +1,96 @@
+[
+    {
+        "id": 1 ,
+        "name":"Conjunto Hielo",
+        "arma": "Gran baston de hielo",
+        "armasecundaria":"No",
+        "casco":"Hábito de Clerigo",
+        "pechera":"Túnica de sectario",
+        "botas":"Botas de soldado",
+        "capa":"capa Hereje",
+        "img":{
+            "arma": "https://render.albiononline.com/v1/item/T8_2H_FROSTSTAFF@0.png",
+            "armasecundaria":"./imagenes/armaSecundaria.png",
+            "casco": "https://render.albiononline.com/v1/item/T7_HEAD_CLOTH_SET2@0.png",
+            "pechera":"https://render.albiononline.com/v1/item/T7_ARMOR_CLOTH_MORGANA@0.png",
+            "botas": "https://render.albiononline.com/v1/item/T7_SHOES_PLATE_SET1@0.png",
+            "capa": "https://render.albiononline.com/v1/item/T6_CAPEITEM_HERETIC@0.png"
+        }
+    },
+    
+    {
+        "id": 2,
+        "name":"Conjunto Espada Ancha",
+        "arma":"Espada Ancha",
+        "armasecundaria":"Muisak",
+        "casco":"Hábito de Diablo",
+        "pechera":"Chaqueta de Mercenario",
+        "botas":"Botas de soldado",
+        "capa":"Capa de Thetford",
+        "img":{
+            "arma": "https://render.albiononline.com/v1/item/T8_MAIN_SWORD@0.png",
+            "armasecundaria":"https://render.albiononline.com/v1/item/T6_OFF_DEMONSKULL_HELL@0.png",
+            "casco": "https://render.albiononline.com/v1/item/T7_HEAD_CLOTH_HELL@0.png",
+            "pechera":"https://render.albiononline.com/v1/item/T7_ARMOR_LEATHER_SET1@0.png",
+            "botas": "https://render.albiononline.com/v1/item/T7_SHOES_PLATE_SET1@0.png",
+            "capa": "https://render.albiononline.com/v1/item/T6_CAPEITEM_FW_THETFORD@0.png"
+        }
+
+        
+    },
+    {
+        "id": 3,
+        "name":"Conjunto Arco Badon",
+        "arma": "Arco de Badon",
+        "armasecundaria":"No",
+        "casco":"Hábito de Mago",
+        "pechera":"Chaqueta de Tenacidad",
+        "botas":"Botas de soldado",
+        "capa":"Capa de Thetford",
+        "img":{
+            "arma": "https://render.albiononline.com/v1/item/T8_2H_BOW_KEEPER@0.png",
+            "armasecundaria":"./imagenes/armaSecundaria.png",
+            "casco": "https://render.albiononline.com/v1/item/T7_HEAD_CLOTH_SET3@0.png",
+            "pechera":"https://render.albiononline.com/v1/item/T7_ARMOR_LEATHER_AVALON@0.png",
+            "botas": "https://render.albiononline.com/v1/item/T7_SHOES_PLATE_SET1@0.png",
+            "capa": "https://render.albiononline.com/v1/item/T6_CAPEITEM_FW_THETFORD@0.png"
+        }
+    },
+    {
+        "id": 4,
+        "name":"Conjunto Bastón Maldito",
+        "arma": "Bastón Maldito",
+        "armasecundaria":"Raiz Primaria",
+        "casco":"Capucha de Espectro",
+        "pechera":"Chaqueta de Mercenario",
+        "botas":"Botas de soldado",
+        "capa":"Capa de Martlock",
+        "img":{
+            "arma": "https://render.albiononline.com/v1/item/T8_MAIN_CURSEDSTAFF@0.png",
+            "armasecundaria":"https://render.albiononline.com/v1/item/T6_OFF_TOTEM_KEEPER@0.png",
+            "casco": "https://render.albiononline.com/v1/item/T7_HEAD_LEATHER_UNDEAD@0.png",
+            "pechera":"https://render.albiononline.com/v1/item/T7_ARMOR_LEATHER_SET1@0.png",
+            "botas": "https://render.albiononline.com/v1/item/T7_SHOES_PLATE_SET1@0.png",
+            "capa": "https://render.albiononline.com/v1/item/T6_CAPEITEM_FW_MARTLOCK@0.png"
+        }
+        
+    },
+    {
+        "id": 5,
+        "name":"Conjunto Lanza de una Mano",
+        "arma": "Lanza",
+        "armasecundaria":"Raiz Primaria",
+        "casco":"Hábito de Sectario",
+        "pechera":"Chaqueta real",
+        "botas":"Botas de Caballero",
+        "capa":"Capa de Thetford",
+        "img":{
+            "arma": "https://render.albiononline.com/v1/item/T8_MAIN_SPEAR@0.png",
+            "armasecundaria":"https://render.albiononline.com/v1/item/T6_OFF_TOTEM_KEEPER@0.png",
+            "casco": "https://render.albiononline.com/v1/item/T7_HEAD_CLOTH_MORGANA@0.png",
+            "pechera":"https://render.albiononline.com/v1/item/T7_ARMOR_LEATHER_ROYAL@0.png",
+            "botas": "https://render.albiononline.com/v1/item/T7_SHOES_PLATE_SET2@0.png",
+            "capa": "https://render.albiononline.com/v1/item/T6_CAPEITEM_FW_THETFORD@0.png"
+        }
+    }
+]
