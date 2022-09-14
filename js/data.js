@@ -1,13 +1,17 @@
 const formularioCalculo = document.getElementById('formularioCalculo');
 const datosVacio = document.getElementById("DatosVacio")
+const cajaPrimerForm= document.getElementById("cajaPrimerForm")
 const formularioConjunto =document.getElementById('formularioConjunto');
 const ulPadre = document.getElementById("ulPadre")
 const formularioBuscar =document.getElementById('formularioBuscar');
 const buscarVacio =document.getElementById("BuscarVacio")
+const conjutosEspacio = document.getElementById("conjutosEspacio")
+
 
 let resultado = ""
 let resultadoIp = ""
 let nombreDelConjunto = ""
+let datoEquipo =""
 
 const conjunto = []
 

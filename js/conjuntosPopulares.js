@@ -1,5 +1,3 @@
-const conjutosEspacio = document.getElementById("conjutosEspacio")
-
 function cargarConjuntos (){
     fetch('./js/datos.json')
         .then(respuesta => respuesta.json())
@@ -40,7 +38,6 @@ function cargarConjuntos (){
                     <div></div>
                 </div>
         </div>`
-                
                 conjutosEspacio.appendChild(divConjunto)
             });
         })

@@ -45,7 +45,9 @@ header{
     justify-content: center;
     padding: 2%;
 }
-
+#formularioCalculo{
+    padding-bottom: 10%;
+}
 .formulario1{
     padding: 3%;
     margin-top: 3%;
@@ -56,6 +58,25 @@ header{
     color: rgb(219,216,209);
 }
 
+.formularioDivisor{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+.cajaPrimerForm{
+    background-image: url(/imagenes/gear.png);
+    background-size: 100% ;
+    background-position-x: center;
+    background-position-y: 22% ;
+    height: 250%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-row: auto auto auto;
+}
+
+.cajaPrimerForm div{
+    margin: auto;
+}
 .botonCalculo , .botonConjunto {
     padding: 3%;
     font-size: 120%;
