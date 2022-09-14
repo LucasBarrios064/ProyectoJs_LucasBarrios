@@ -1,8 +1,11 @@
 function cargarConjuntos (){
+    //FUNCION PARA MOSTRAR UNA SERIE DE CONJUNTOS ESPECIALES QUE ESTAN GUARDADOS DENTRO DE UN .JSON
+
     fetch('./js/datos.json')
         .then(respuesta => respuesta.json())
         .then(conjunto => {
             conjunto.forEach(element => {
+                //DOM de los datos
                 const divConjunto = document.createElement('div')
                 divConjunto.innerHTML = `<div class="cajaConjunto cajaTextoExplicacion">
 
